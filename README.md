@@ -134,6 +134,44 @@ The name of the file must be relative to the file you are including.
 
 Regions help with formatting your code.
 
+## Operators
+
+### Arithmetic operators
+
+The lower stack value is the right hand side, the upper is the left hand side of any operation. After an operation, both sides of arguments are popped from the stack and the result is pushed onto it.
+
+#### Commands:
+
+|       Datatype       | Command  |
+| :------------------: | :------: |
+|     Add two integers     | `add`  |
+|    Subtract two integers     | `sub` |
+|    Multiply two integers     | `mul` |
+|    Divide two integers     |  `div`  |
+|    Modulo operation on two integers     | `mod` |
+|    Left shift     |  `shl`  |
+|    Right shift     | `shr` |
+|     Add two floats     | `addf`  |
+|    Subtract two floats     | `subf` |
+|    Multiply two floats     | `mulf` |
+|    Divide two floats     |  `divf`  |
+|    Modulo operation on two floats     | `modf` |
+
+### Logical operators
+
+#### Commands:
+
+|       Datatype       | Command  |
+| :------------------: | :------: |
+|     And two bits     | `and`  |
+|    Or two bits     | `or` |
+|    Xor two bits     | `xor` |
+|    Flip a bit     |  `not`  |
+
+## Jump to a label
+
+`jmp labelname`
+
 ## Persephone code sample
 
 ### fibonacci
@@ -199,8 +237,8 @@ v_int32 var_01
 ldi32c 1
 store var_01
 
-ldi32v var_01
 ldi32c 0
+ldi32v var_01
 shl # left shift var_01 (16) by 4
 store var_01 # assign shift result to var_01
 
