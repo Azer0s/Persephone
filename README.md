@@ -372,11 +372,12 @@ v_int32 var4
 
 v_ptr arr_ptr
 ldptr var0
-store arr_ptr # arr_ptr is 0x0 on stack
+store arr_ptr # arr_ptr is 0x0
 
 ldptr arr_ptr
 ldi32c 0
-add # arr_ptr is 0x2 on stack
+add
+store arr_ptr # arr_ptr is 0x2
 
 ldi32v [arr_ptr] # load var2 onto stack
 call 0x01
