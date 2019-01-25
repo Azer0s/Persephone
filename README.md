@@ -121,6 +121,21 @@ Removes the top most value from the stack
 
 `ret` returns from a function and jumps to the address of where the function was called +1.
 
+## Compiler directives
+
+### Include
+
+`#include nameOfFile.psph`
+
+The name of the file must be relative to the file you are including.
+
+### Region
+`#region nameOfRegion`
+<br>
+`#endregion nameOfRegion`
+
+Regions help with formatting your code.
+
 ## Persephone code sample
 
 ### fibonacci
