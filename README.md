@@ -142,7 +142,7 @@ The lower stack value is the right hand side, the upper is the left hand side of
 
 #### Commands:
 
-|       Datatype       | Command  |
+|            Operation             | Command  |
 | :------------------: | :------: |
 |     Add two integers     | `add`  |
 |    Subtract two integers     | `sub` |
@@ -161,12 +161,23 @@ The lower stack value is the right hand side, the upper is the left hand side of
 
 #### Commands:
 
-|       Datatype       | Command  |
+|       Operation       | Command  |
 | :------------------: | :------: |
 |     And two bits     | `and`  |
-|    Or two bits     | `or` |
-|    Xor two bits     | `xor` |
-|    Flip a bit     |  `not`  |
+| Or two bits | `or` |
+| Xor two bits | `xor` |
+| Flip a bit |  `not`  |
+
+### String operations
+
+#### Commands:
+
+|                   Operation                    |     Command     |
+| :--------------------------------------------: | :-------------: |
+|            Concatenate two strings             |     `conc`      |
+|              Get length of string              | `len nameOfVar` |
+| Get a character (lower: position, upper: char) |     `getc`      |
+| Set a character (lower: position, upper: char) |     `setc`      |
 
 ## Jump to a label
 
