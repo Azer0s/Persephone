@@ -346,3 +346,30 @@ function_that_returns_status_and_text {
 }
 ```
 
+## Creating arrays
+
+```coffeescript
+dci32 2
+
+v_int32 var0
+v_int32 var1
+v_int32 var2
+v_int32 var3
+v_int32 var4
+
+...
+
+v_ptr arr_ptr
+ldptr var0
+store arr_ptr # arr_ptr is 0x0 on stack
+
+ldptr arr_ptr
+ldi32c 0
+add # arr_ptr is 0x2 on stack
+
+ldi32v [arr_ptr] # load var2 onto stack
+call 0x01
+```
+
+
+
