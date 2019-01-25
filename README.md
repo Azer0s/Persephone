@@ -103,9 +103,7 @@ All variables in Persephone are signed
 
 ## Pop value from stack
 
-`pop`
-
-Removes the top most value from the stack
+`pop` removes the top most value from the stack
 
 ## Prepare a variable for function return
 
@@ -125,14 +123,14 @@ Removes the top most value from the stack
 
 ### Include
 
-`#include nameOfFile.psph`
+`%include nameOfFile.psph`
 
 The name of the file must be relative to the file you are including.
 
 ### Region
-`#region nameOfRegion`
+`%region nameOfRegion`
 <br>
-`#endregion nameOfRegion`
+`%endregion nameOfRegion`
 
 Regions help with formatting your code.
 
