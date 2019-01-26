@@ -155,7 +155,6 @@ The lower stack value is the right hand side, the upper is the left hand side of
 |    Subtract two floats     | `subf` |
 |    Multiply two floats     | `mulf` |
 |    Divide two floats     |  `divf`  |
-|    Modulo operation on two floats     | `modf` |
 
 ### Logical operators
 
