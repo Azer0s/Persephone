@@ -146,6 +146,10 @@ The lower stack value is the left hand side, the upper is the right hand side of
 |    Multiply two integers     | `mul` |
 |    Divide two integers     |  `div`  |
 |    Modulo operation on two integers     | `mod` |
+| Greater or equal | `ge` | 
+| Less or equal | `le` |
+| Greater than | `gt` | 
+| Less than | `lt` | 
 |     And two ints     | `andi`  |
 | Or two ints | `ori` |
 | Xor two ints | `xori` |
@@ -156,6 +160,10 @@ The lower stack value is the left hand side, the upper is the right hand side of
 |    Subtract two floats     | `subf` |
 |    Multiply two floats     | `mulf` |
 |    Divide two floats     |  `divf`  |
+| Greater or equal (float) | `gef` | 
+| Less or equal (float) | `lef` |
+| Greater than (float) | `gtf` | 
+| Less than (float) | `ltf` | 
 
 ### Logical operators
 
@@ -181,7 +189,17 @@ The lower stack value is the left hand side, the upper is the right hand side of
 
 ## Jump to a label
 
-`jmp labelname`
+`jmp <labelname>`
+
+## Conditional jump
+
+### Jump if top of stack is 1
+
+`jmpt <labelname>`
+
+### Jump if top of stack is 0
+
+`jmpf <labelname>`
 
 ## Persephone code sample
 
