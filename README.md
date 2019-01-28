@@ -209,7 +209,8 @@ store var_02 # initialize var_02 with 1
 loop:
 ldi32v var_01 # load int32 variable onto stack
 ldi32c 2 # load constant of index 2 onto stack
-jmpile fib # jump to fib if var_01 is smaller or equal to 10000
+le
+jmpt fib # jump to fib if var_01 is smaller or equal to 10000
 jmp exit
 
 fib:
