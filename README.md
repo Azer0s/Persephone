@@ -135,7 +135,7 @@ Regions help with formatting your code.
 
 ### Arithmetic operators
 
-The lower stack value is the right hand side, the upper is the left hand side of any operation. After an operation, both sides of arguments are popped from the stack and the result is pushed onto it.
+The lower stack value is the left hand side, the upper is the right hand side of any operation. After an operation, both sides of arguments are popped from the stack and the result is pushed onto it.
 
 #### Commands:
 
