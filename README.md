@@ -2,7 +2,7 @@
 
 ## Variable declaration
 
-`v_datatype variable_name` 
+`v_<datatype> variable_name` 
 
 All variables in Persephone are signed
 
@@ -22,12 +22,11 @@ All variables in Persephone are signed
 |     ASCII string     | `v_stringa` |
 |    Unicode string    | `v_stringu` |
 |         Bit          |   `v_bit`   |
-|   Dynamic variable   |   `v_dyn`   |
 |       Pointer        |   `v_ptr`   |
 
 ## Constant declaration
 
-`dcdatatype value`
+`dc<datatype> value`
 
 ### Commands:
 
@@ -48,7 +47,7 @@ All variables in Persephone are signed
 
 ## Load values from variable
 
-`lddatatypev variable_name`
+`ld<datatype>v variable_name`
 
 ### Commands:
 
@@ -66,23 +65,21 @@ All variables in Persephone are signed
 |     ASCII string     | `ldsav`  |
 |    Unicode string    | `ldsuv`  |
 |         Bit          |  `ldbv`  |
-|       Dynamic        | `lddyn`  |
+|         Ptr          | `ldptrv` |
 
 ## Load pointer
 
-`ldptr name`
-
-`ldptr` can load the pointer of any function, label or variable.
+One can load the pointer of any function, label or variable.
 
 | Datatype | Command |
 | :------: | :-----: |
-| Function | `ldptr` |
-|  Label   | `ldptr` |
-| Variable | `ldptr` |
+| Function | `ldfnptr` |
+|  Label   | `ldlblptr` |
+| Variable | `ldvptr` |
 
 ## Load values from constant
 
-`lddatatypec variable_name`
+`ld<datatype>c variable_name`
 
 ### Commands:
 
@@ -149,6 +146,10 @@ The lower stack value is the right hand side, the upper is the left hand side of
 |    Multiply two integers     | `mul` |
 |    Divide two integers     |  `div`  |
 |    Modulo operation on two integers     | `mod` |
+|     And two ints     | `andi`  |
+| Or two ints | `ori` |
+| Xor two ints | `xori` |
+| Flip int bits |  `noti`  |
 |    Left shift     |  `shl`  |
 |    Right shift     | `shr` |
 |     Add two floats     | `addf`  |
@@ -266,10 +267,6 @@ A pointer can either contain the address of a jump label, the address of a funct
 dcsa "Hello world"
 
 print {
-    v_dyn to_print
-    store to_print # store value from stack into temporary variable
-    
-    lddyn to_print
     call 0x01
 }
 
