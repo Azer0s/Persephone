@@ -196,6 +196,120 @@ The lower stack value is the left hand side, the upper is the right hand side of
 
 `call` puts an address into the return stack while `jmp` does not. If you want to return from a label, use `call`. If you just want to jump to a label, use `jmp`.
 
+## Bytecode
+
+A command is always an unsigned 16 bit integer. Commands with parameters are followed by an unsigned 8 bit integer that determines the type of the following parameter.
+
+|       Type       |   Opcode   |
+| :------------------: | :---------: |
+|  `int`   |     0x1     |
+|  `float`  |    0x2     |
+|  `ASCII string`  |    0x3     |
+|  `Unicode string`  |    0x4     |
+|  `Bit`  |    0x5     |
+|  `Ptr`  |    0x6     |
+|  Variable  |    0xF     |
+
+`int` is followed by the size of the integer. This can either be 0x8, 0x10, 0x20 or 0x40. The actual value comes after the size. Leading zeroes are required if the value doesn't fill all bits.
+
+`float` is also followed by a size. This can be 0x20 or 0x40. The actual value comes after the size. Leading zeroes are required if the value doesn't fill all bits.
+
+`ASCII string` and `Unicode string` are followed by the size of the string (total bytes). The actual value comes after the size.
+
+`Bit` is followed by either a 0 or a 1.
+
+`Ptr` doesn't have a literal.
+
+Commands that require a varname, are followed by 0xF and a hex value which stands for the variable name.
+
+|   Command   |   Opcode   |
+| :---------: | :---------: |
+|  `v_int8`   |0x0118|
+|  `v_int16`  |0x0110|
+|  `v_int32`  |0x0120|
+|   `v_int`   |0x0120|
+|  `v_int64`  |0x0140|
+| `v_float32` |0x0121|
+|  `v_float`  |0x0121|
+| `v_float64` |0x0141|
+| `v_double`  |0x0141|
+| `v_stringa` |0x0131|
+| `v_stringu` |0x0132|
+|   `v_ptr`   |0x0150|
+|   `v_bit`   |0x0100|
+| `dci8`      |0x0218|
+| `dci16`     |0x0210|
+| `dci32`     |0x0220|
+|  `dci`      |0x0220|
+| `dci64`     |0x0240|
+| `dcf32`     |0x0221|
+|  `dcf`      |0x0221|
+| `dcf64`     |0x0241|
+|  `dcd`      |0x0241|
+| `dcsa`      |0x0231|
+| `dcsu`      |0x0232|
+|  `dcb`      |0x0200|
+| `ldi8v`     |0x0318|
+| `ldi16v`    |0x0310|
+| `ldi32v`    |0x0320|
+|  `ldiv`     |0x0320|
+| `ldi64v`    |0x0340|
+| `ldf32v`    |0x0321|
+|  `ldfv`     |0x0321|
+| `ldf64v`    |0x0341|
+|  `lddv`     |0x0341|
+| `ldsav`     |0x0331|
+| `ldsuv`     |0x0332|
+| `ldptrv`    |0x0350|
+|  `ldbv`     |0x0300|
+| `ldi8c`     |0x0418|
+| `ldi16c`    |0x0410|
+| `ldi32c`    |0x0420|
+|  `ldic`     |0x0420|
+| `ldi64c`    |0x0440|
+| `ldf32c`    |0x0421|
+|  `ldfc`     |0x0421|
+| `ldf64c`    |0x0441|
+|  `lddc`     |0x0441|
+| `ldsac`     |0x0431|
+| `ldsuc`     |0x0432|
+|  `ldbc`     |0x0400|
+|`pop`        |0x0001|
+|`ret`        |0x0002|
+| `add`       |0x0003|
+| `sub`       |0x0004|
+| `mul`       |0x0005|
+|  `div`      |0x0006|
+| `mod`       |0x0007|
+| `ge`        |0x0008|
+| `le`        |0x0009|
+| `gt`        |0x000A|
+| `lt`        |0x000B|
+| `andi`      |0x000C|
+| `ori`       |0x000D|
+| `xori`      |0x000E|
+|  `noti`     |0x000F|
+|  `shl`      |0x0010|
+| `shr`       |0x0011|
+| `inc`       |0x0012|
+| `dec`       |0x0013|
+| `addf`      |0x0014|
+| `subf`      |0x0015|
+| `mulf`      |0x0016|
+|  `divf`     |0x0017|
+| `gef`       |0x0018|
+| `lef`       |0x0019|
+| `gtf`       |0x001A|
+| `ltf`       |0x001B|
+|`and`        |0x001C|
+|`or`         |0x001D|
+|`xor`        |0x001E|
+|`not`        |0x001F|
+|`conc`       |0x0020|
+|`len`        |0x0021|
+|`getc`       |0x0022|
+|`setc`       |0x0023|
+
 ## Persephone code sample
 
 ### fibonacci
