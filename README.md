@@ -73,9 +73,9 @@ One can load the pointer of any function, label or variable.
 
 | Datatype | Command |
 | :------: | :-----: |
-| Function | `ldfnptr` |
-|  Label   | `ldlblptr` |
-| Variable | `ldvptr` |
+| Function | `ldptr` |
+|  Label   | `ldptr` |
+| Variable | `ldptr` |
 
 ## Load values from constant
 
