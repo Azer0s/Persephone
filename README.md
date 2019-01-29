@@ -73,7 +73,6 @@ One can load the pointer of any function, label or variable.
 
 | Datatype | Command |
 | :------: | :-----: |
-| Function | `ldptr` |
 |  Label   | `ldptr` |
 | Variable | `ldptr` |
 
@@ -102,17 +101,7 @@ One can load the pointer of any function, label or variable.
 
 `pop` removes the top most value from the stack
 
-## Prepare a variable for function return
-
-`prep variable` prepares a variable for return. Since Persephone has first grade support for multiple return values, you can prepare multiple variables. 
-
-## Function commands
-
-### put
-
-`put` returns the top most value from the stack into a prepared variable
-
-### ret
+## Return from label
 
 `ret` returns from a function and jumps to the address of where the function was called +1.
 
@@ -203,6 +192,10 @@ The lower stack value is the left hand side, the upper is the right hand side of
 
 `jmpf <labelname>`
 
+## call vs jmp
+
+`call` puts an address into the return stack while `jmp` does not. If you want to return from a label, use `call`. If you just want to jump to a label, use `jmp`.
+
 ## Persephone code sample
 
 ### fibonacci
@@ -282,14 +275,14 @@ syscall 0x01 # print var_01
 
 A pointer can either contain the address of a jump label, the address of a function or the address of a variable. Functions are called with `call` while labels are called with `jmp`.
 
-### Pointer to function
+### Pointer to function label
 
 ```coffeescript
 dcsa "Hello world"
 
-print {
+print:
     syscall 0x01
-}
+    ret
 
 v_ptr print_ptr
 ldptr print # loads the function ptr
@@ -350,10 +343,10 @@ syscall [print]
 v_int32 status
 v_stringa text
 
-prep status
-prep text
+call return_status_and_text
 
-call function_that_returns_status_and_text
+store status
+store text
 
 # status and text now have values returned by function_that_returns_status_and_text
 
@@ -362,16 +355,12 @@ pop
 ```
 
 ```coffeescript
-function_that_returns_status_and_text {
+return_status_and_text:
     ...
     ldi32v return_status
-    put
-    
     ldsav return_text
-    put
     
     ret
-}
 ```
 
 ## Creating arrays
