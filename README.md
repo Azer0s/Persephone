@@ -380,7 +380,7 @@ v_ptr arr_ptr
 ldptr var0
 store arr_ptr # arr_ptr is 0x0
 
-ldptr arr_ptr
+ldptrv arr_ptr
 ldi32c 0
 add
 store arr_ptr # arr_ptr is 0x2
