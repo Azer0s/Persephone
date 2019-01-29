@@ -156,6 +156,8 @@ The lower stack value is the left hand side, the upper is the right hand side of
 | Flip int bits |  `noti`  |
 |    Left shift     |  `shl`  |
 |    Right shift     | `shr` |
+| Increment by one | `inc` |
+| Decrement by one | `dec` |
 |     Add two floats     | `addf`  |
 |    Subtract two floats     | `subf` |
 |    Multiply two floats     | `mulf` |
