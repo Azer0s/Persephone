@@ -175,7 +175,7 @@ The lower stack value is the left hand side, the upper is the right hand side of
 | :--------------------------------------------: | :-------------: |
 |            Concatenate two strings             |     `conc`      |
 |              Get length of string              | `len <nameOfVar>` |
-| Get a character (lower: position, upper: char) |     `getc <nameOfVar>`      |
+| Get a character (stack: position) |     `getc <nameOfVar>`      |
 | Set a character (lower: position, upper: char) |     `setc <nameOfVar>`      |
 
 ## Jump to a label
