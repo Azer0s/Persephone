@@ -349,9 +349,6 @@ store status
 store text
 
 # status and text now have values returned by function_that_returns_status_and_text
-
-pop
-pop
 ```
 
 ```coffeescript
