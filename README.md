@@ -246,10 +246,10 @@ add
 store var_02
 
 ldi32v var_01
-call 0x01 # print var_01
+syscall 0x01 # print var_01
 
 ldi32v var_02
-call 0x01 # print var_02
+syscall 0x01 # print var_02
 
 jmp loop
 
@@ -275,7 +275,7 @@ shl # left shift var_01 (16) by 4
 store var_01 # assign shift result to var_01
 
 ldi32v var_01
-call 0x01 # print var_01
+syscall 0x01 # print var_01
 ```
 
 ### Pointers
@@ -288,7 +288,7 @@ A pointer can either contain the address of a jump label, the address of a funct
 dcsa "Hello world"
 
 print {
-    call 0x01
+    syscall 0x01
 }
 
 v_ptr print_ptr
@@ -306,7 +306,7 @@ dcsa "Hello"
 
 loop:
 ldsac 0
-call 0x1
+syscall 0x1
 
 v_ptr loop_ptr
 ldptr loop
@@ -329,7 +329,7 @@ ldptr var0
 store var0_ptr
 
 ldi32v [var0_ptr]
-call 0x01
+syscall 0x01
 ```
 
 ### Fixed address pointer
@@ -341,7 +341,7 @@ v_ptr print
 ldi8c 0
 store print
 
-call [print]
+syscall [print]
 ```
 
 ## Functions
@@ -397,7 +397,7 @@ add
 store arr_ptr # arr_ptr is 0x2
 
 ldi32v [arr_ptr] # load var2 onto stack
-call 0x01
+syscall 0x01
 ```
 
 
