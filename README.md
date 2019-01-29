@@ -127,7 +127,7 @@ The name of the file must be relative to the file you are including.
 ### Region
 `%region nameOfRegion`
 <br>
-`%endregion nameOfRegion`
+`%endregion`
 
 Regions help with formatting your code.
 
@@ -146,10 +146,10 @@ The lower stack value is the left hand side, the upper is the right hand side of
 |    Multiply two integers     | `mul` |
 |    Divide two integers     |  `div`  |
 |    Modulo operation on two integers     | `mod` |
-| Greater or equal | `ge` | 
+| Greater or equal | `ge` |
 | Less or equal | `le` |
-| Greater than | `gt` | 
-| Less than | `lt` | 
+| Greater than | `gt` |
+| Less than | `lt` |
 |     And two ints     | `andi`  |
 | Or two ints | `ori` |
 | Xor two ints | `xori` |
@@ -162,10 +162,10 @@ The lower stack value is the left hand side, the upper is the right hand side of
 |    Subtract two floats     | `subf` |
 |    Multiply two floats     | `mulf` |
 |    Divide two floats     |  `divf`  |
-| Greater or equal (float) | `gef` | 
+| Greater or equal (float) | `gef` |
 | Less or equal (float) | `lef` |
-| Greater than (float) | `gtf` | 
-| Less than (float) | `ltf` | 
+| Greater than (float) | `gtf` |
+| Less than (float) | `ltf` |
 
 ### Logical operators
 
