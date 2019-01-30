@@ -337,6 +337,17 @@ Commands that require a varname, are followed by 0xF and a hex value which stand
 |`getc`       |0x0022|
 |`setc`       |0x0023|
 
+### jmp/call
+
+The `jmp` and `call` commands are followed by a 64 bit int (the label name).
+
+|   Command   |   Opcode   |
+| :---------: | :---------: |
+| `call`| 0xF000 |
+|  `jmp`   |0xF001|
+|  `jmpt`  |0xF002|
+|  `jmpf`  |0xF003|
+
 ## Persephone code sample
 
 ### fibonacci
