@@ -198,7 +198,23 @@ The lower stack value is the left hand side, the upper is the right hand side of
 
 ## Bytecode
 
+At the beginning of a binary file, you have to declare labels. The first 16 bits of the file declares how long the label section is (size is the number of labels).
+
+A label consists of two 64 bit ints. The first one is the label name (or a hex representation/placeholder for it). The second int is the position of the byte the label jumps to.
+
+### Examples
+
+```
+0x1 0xFA63 0x12
+```
+
+This means that there is only one label. The single label has the name 0xFA63 and points to the 18th byte of the program (after the label section).
+
+### Commands
+
 A command is always an unsigned 16 bit integer. Commands with parameters are followed by an unsigned 8 bit integer that determines the type of the following parameter.
+
+### Parameters
 
 |       Type       |   Opcode   |
 | :------------------: | :---------: |
@@ -221,6 +237,17 @@ A command is always an unsigned 16 bit integer. Commands with parameters are fol
 `Ptr` doesn't have a literal.
 
 Commands that require a varname, are followed by 0xF and a hex value which stands for the variable name.
+
+#### Example
+
+42 is 0x2A in hex and 00101010 in binary. If we want to put 42 into a 16 bit integer, we need to frontpad it. That means that it would look like so: 0000000000101010 or 0x002A in hex.
+
+```
+0x1 0x10 0x002A
+```
+
+
+### Command opcodes 
 
 |   Command   |   Opcode   |
 | :---------: | :---------: |
