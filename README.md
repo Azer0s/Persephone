@@ -239,13 +239,22 @@ A command is always an unsigned 16 bit integer. Commands with parameters are fol
 
 Commands that require a varname, are followed by 0xF and a hex value which stands for the variable name.
 
-#### Example
+#### Example: Int
 
 42 is 0x2A in hex and 00101010 in binary. If we want to put 42 into a 16 bit integer, we need to frontpad it. That means that it would look like so: 0000000000101010 or 0x002A in hex.
 
 ```
 0x1 0x10 0x002A
 ```
+
+By default, Persephone should infer the int size from the value.
+
+|   Range   |   Bits   |
+| :---------: | :---------: |
+|-128 to 127  |int8|
+|-32768 to 32767     |int16|
+|-2147483648 to 2147483647    |int32|
+|-9223372036854775808 to 9223372036854775807      |int64|
 
 
 ### Command opcodes 
