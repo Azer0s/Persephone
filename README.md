@@ -338,6 +338,7 @@ Commands that require a varname, are followed by 0xF and a hex value which stand
 |`getc`       |0x0022|
 |`setc`       |0x0023|
 |`syscall`    |0x0024|
+|`extern`     |0x0025|
 
 ### jmp/call
 
