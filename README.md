@@ -227,9 +227,9 @@ A command is always an unsigned 16 bit integer. Commands with parameters are fol
 | Labelname | 0xE|
 |  Variable  |    0xF     |
 
-`int` is followed by the size of the integer. This can either be 0x8, 0x10, 0x20 or 0x40. The actual value comes after the size. Leading zeroes are required if the value doesn't fill all bits.
+`int` is followed by the size of the integer. This can either be 0x8 (int8), 0x10 (int16), 0x20 (int32) or 0x40 (int64). The actual value comes after the size. Leading zeroes are required if the value doesn't fill all bits.
 
-`float` is also followed by a size. This can be 0x20 or 0x40. The actual value comes after the size. Leading zeroes are required if the value doesn't fill all bits.
+`float` is also followed by a size. This can be 0x21 (float32) or 0x41 (float64). The actual value comes after the size. Leading zeroes are required if the value doesn't fill all bits.
 
 `ASCII string` and `Unicode string` are followed by the size of the string (total bytes as unsigned 64 bit integer). The actual value comes after the size. Persephone should infer the type of the string (if the length of the byte array is the same length as the string, it's an ASCII string).
 
