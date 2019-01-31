@@ -224,6 +224,7 @@ A command is always an unsigned 16 bit integer. Commands with parameters are fol
 |  `Unicode string`  |    0x4     |
 |  `Bit`  |    0x5     |
 |  `Ptr`  |    0x6     |
+| Labelname | 0xE|
 |  Variable  |    0xF     |
 
 `int` is followed by the size of the integer. This can either be 0x8, 0x10, 0x20 or 0x40. The actual value comes after the size. Leading zeroes are required if the value doesn't fill all bits.
@@ -340,7 +341,7 @@ Commands that require a varname, are followed by 0xF and a hex value which stand
 
 ### jmp/call
 
-The `jmp` and `call` commands are followed by a 64 bit int (the label name).
+The `jmp` and `call` commands are followed by the hex value 0xE (labelname type) and a 64 bit unsigned int (the label name), a pointer value or an int value.
 
 |   Command   |   Opcode   |
 | :---------: | :---------: |
