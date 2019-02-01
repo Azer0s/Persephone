@@ -24,6 +24,10 @@ All variables in Persephone are signed
 |         Bit          |   `v_bit`   |
 |       Pointer        |   `v_ptr`   |
 
+## Variable destruction
+
+`delete variable_name`
+
 ## Constant declaration
 
 `dc<datatype> value`
