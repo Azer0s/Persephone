@@ -311,6 +311,7 @@ By default, Persephone should infer the int size from the value.
 |`ldsac`      |0x0431|
 |`ldsuc`      |0x0432|
 |`ldbc`       |0x0400|
+|`cbase`      |0xFFFF|
 |`pop`        |0x0001|
 |`ret`        |0x0002|
 |`add`        |0x0003|
