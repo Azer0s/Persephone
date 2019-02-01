@@ -278,8 +278,9 @@ By default, Persephone should infer the int size from the value.
 |`v_stringu`  |0x0132|
 |`v_ptr`      |0x0150|
 |`v_bit`      |0x0100|
-| `dci8`      |0x0218|
-| `dci16`     |0x0210|
+|`delete`     |0x0099|
+|`dci8`       |0x0218|
+|`dci16`      |0x0210|
 |`dci32`      |0x0220|
 |`dci`        |0x0220|
 |`dci64`      |0x0240|
