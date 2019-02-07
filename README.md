@@ -237,7 +237,7 @@ A command is always an unsigned 16 bit integer. Commands with parameters are fol
 
 `ASCII string` and `Unicode string` are followed by the size of the string (total bytes as unsigned 64 bit integer). The actual value comes after the size. Persephone should infer the type of the string (if the length of the byte array is the same length as the string, it's an ASCII string).
 
-`Bit` is followed by either a 0 or a 1.
+`Bit` is followed by either a 0x0 or a 0x1.
 
 `Ptr` is followed by a 64 bit unsigned integer variable name.
 
@@ -419,6 +419,23 @@ jmp loop
 exit: # exit program
 ldi8c 4
 store RETURN_CODE
+```
+
+### Boolean
+
+```coffeescript
+dcb false
+dcb true
+
+ldb 0
+ldb 1
+xor
+syscall 0x01
+
+ldb 1
+ldb 1
+and
+pop
 ```
 
 ### Shift
