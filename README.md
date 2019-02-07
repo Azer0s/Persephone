@@ -427,13 +427,13 @@ store RETURN_CODE
 dcb false
 dcb true
 
-ldb 0
-ldb 1
+ldbc 0
+ldbc 1
 xor
 syscall 0x01
 
-ldb 1
-ldb 1
+ldbc 1
+ldbc 1
 and
 pop
 ```
