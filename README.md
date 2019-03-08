@@ -265,6 +265,7 @@ By default, Persephone should infer the int size from the value.
 
 |   Command   |   Opcode   |
 | :---------: | :---------: |
+|`store`      |0x0000|
 |`v_int8`     |0x0118|
 |`v_int16`    |0x0110|
 |`v_int32`    |0x0120|
