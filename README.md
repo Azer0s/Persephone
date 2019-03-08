@@ -241,7 +241,7 @@ A command is always an unsigned 16 bit integer. Commands with parameters are fol
 
 `Ptr` is followed by a 64 bit unsigned integer variable name.
 
-Commands that require a varname, are followed by 0xF and a hex value which stands for the variable name.
+Commands that require a varname, are followed by 0xF and a 64 bit unsigned integer value which stands for the variable name.
 
 #### Example: Int
 
