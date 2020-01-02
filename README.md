@@ -4,7 +4,7 @@
 
 `v_<datatype> variable_name` 
 
-All variables in Persephone are signed
+All variables in Persephone are signed. ASCII and Unicode strings can be loaded as 8 bit ints and vice versa.
 
 ### Commands:
 
@@ -260,6 +260,17 @@ By default, Persephone should infer the int size from the value.
 |-2147483648 to 2147483647    |int32|
 |-9223372036854775808 to 9223372036854775807      |int64|
 
+### Syscalls
+
+Load parameter onto stack, call `syscall` with opcode or ptr as parameter.
+
+|   Command   |   Opcode   |
+| :---------: | :---------: |
+|Print      |0x01|
+|Println     |0x10|
+|Read char    |0x02|
+|Read line    |0x20|
+
 
 ### Command opcodes 
 
@@ -410,10 +421,10 @@ add
 store var_02
 
 ldi32v var_01
-syscall 0x01 # print var_01
+syscall 0x10 # print var_01
 
 ldi32v var_02
-syscall 0x01 # print var_02
+syscall 0x10 # print var_02
 
 jmp loop
 
@@ -431,7 +442,7 @@ dcb true
 ldbc 0
 ldbc 1
 xor
-syscall 0x01
+syscall 0x10
 
 ldbc 1
 ldbc 1
@@ -456,7 +467,7 @@ shl # left shift var_01 (16) by 4
 store var_01 # assign shift result to var_01
 
 ldi32v var_01
-syscall 0x01 # print var_01
+syscall 0x10 # print var_01
 ```
 
 ### Pointers
@@ -469,7 +480,7 @@ A pointer can either contain the address of a jump label, the address of a funct
 dcsa "Hello world"
 
 print:
-    syscall 0x01
+    syscall 0x10
     ret
 
 v_ptr print_ptr
@@ -487,7 +498,7 @@ dcsa "Hello"
 
 loop:
 ldsac 0
-syscall 0x1
+syscall 0x10
 
 v_ptr loop_ptr
 ldptr loop
@@ -510,13 +521,13 @@ ldptr var0
 store var0_ptr
 
 ldi32v [var0_ptr]
-syscall 0x01
+syscall 0x10
 ```
 
 ### Fixed address pointer
 
 ```coffeescript
-dci8 0x01
+dci8 0x10
 
 v_ptr print
 ldi8c 0
@@ -571,8 +582,5 @@ add
 store arr_ptr # arr_ptr is 0x2
 
 ldi32v [arr_ptr] # load var2 onto stack
-syscall 0x01
+syscall 0x10
 ```
-
-
-
