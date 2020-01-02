@@ -73,7 +73,13 @@ All variables in Persephone are signed. ASCII and Unicode strings can be loaded 
 
 ## Load pointer
 
-One can load the pointer of any function, label or variable.
+One can load the pointer of any function, label or variable. In Persephone, labels, functions and variables are stored in one address space. This means that if you have 4 labels, the pointer (without memory offset) to the first variable is going to be 0x4.
+
+```
++-----------------+-----------------+-----------------+-----------------+-------------- ~ ~ --------------+
+|  Label 1 (0x0)  |  Label 2 (0x1)  |  Label 3 (0x2)  |  Label 4 (0x3)  |  Var 1 (0x4)  ~ ~  Var n (0xn)  |
++-----------------+-----------------+-----------------+-----------------+-------------- ~ ~ --------------+
+```
 
 | Datatype | Command |
 | :------: | :-----: |
