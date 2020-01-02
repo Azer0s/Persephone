@@ -188,11 +188,11 @@ The lower stack value is the left hand side, the upper is the right hand side of
 
 ## Conditional jump
 
-### Jump if top of stack is 1
+### Jump if top of stack is 1/true
 
 `jmpt <labelname>`
 
-### Jump if top of stack is 0
+### Jump if top of stack is 0/false
 
 `jmpf <labelname>`
 
