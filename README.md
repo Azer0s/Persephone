@@ -286,6 +286,7 @@ Load parameter onto stack, call `syscall` with opcode or ptr as parameter.
 
 |   Command   |   Opcode   |
 | :---------: | :---------: |
+|`nop`        |0x1000|
 |`store`      |0x0000|
 |`v_int8`     |0x0118|
 |`v_int16`    |0x0110|
