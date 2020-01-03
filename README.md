@@ -4,25 +4,30 @@
 
 `v_<datatype> variable_name` 
 
-All variables in Persephone are signed. ASCII and Unicode strings can be loaded as 8 bit ints and vice versa.
+ASCII and Unicode strings can be loaded as 8 bit uints and vice versa.
 
 ### Commands:
 
-|       Datatype       |   Command   |
-| :------------------: | :---------: |
-|     8bit integer     |  `v_int8`   |
-|    16bit integer     |  `v_int16`  |
-|    32bit integer     |  `v_int32`  |
-|    32bit integer     |   `v_int`   |
-|    64bit integer     |  `v_int64`  |
-| 32bit floating point | `v_float32` |
-| 32bit floating point |  `v_float`  |
-| 64bit floating point | `v_float64` |
-| 64bit floating point | `v_double`  |
-|     ASCII string     | `v_stringa` |
-|    Unicode string    | `v_stringu` |
-|         Bit          |   `v_bit`   |
-|       Pointer        |   `v_ptr`   |
+|       Datatype                |   Command   |
+| :---------------------------: | :---------: |
+|         8bit integer          |  `v_int8`   |
+|        16bit integer          |  `v_int16`  |
+|        32bit integer          |  `v_int32`  |
+|        32bit integer          |   `v_int`   |
+|        64bit integer          |  `v_int64`  |
+|     8bit unsigned integer     |  `v_uint8`  |
+|    16bit unsigned integer     |  `v_uint16` |
+|    32bit unsigned integer     |  `v_uint32` |
+|    32bit unsigned integer     |   `v_uint`  |
+|    64bit unsigned integer     |  `v_uint64` |
+|    32bit floating point       | `v_float32` |
+|    32bit floating point       |  `v_float`  |
+|    64bit floating point       | `v_float64` |
+|    64bit floating point       | `v_double`  |
+|        ASCII string           | `v_stringa` |
+|       Unicode string          | `v_stringu` |
+|            Bit                |   `v_bit`   |
+|          Pointer              |   `v_ptr`   |
 
 ## Variable destruction
 
@@ -34,20 +39,25 @@ All variables in Persephone are signed. ASCII and Unicode strings can be loaded 
 
 ### Commands:
 
-|       Datatype       | Command |
-| :------------------: | :-----: |
-|     8bit integer     | `dci8`  |
-|    16bit integer     | `dci16` |
-|    32bit integer     | `dci32` |
-|    32bit integer     |  `dci`  |
-|    64bit integer     | `dci64` |
-| 32bit floating point | `dcf32` |
-| 32bit floating point |  `dcf`  |
-| 64bit floating point | `dcf64` |
-| 64bit floating point |  `dcd`  |
-|     ASCII string     | `dcsa`  |
-|    Unicode string    | `dcsu`  |
-|         Bit          |  `dcb`  |
+|            Datatype           | Command |
+| :---------------------------: | :-----: |
+|         8bit integer          | `dci8`  |
+|        16bit integer          | `dci16` |
+|        32bit integer          | `dci32` |
+|        32bit integer          |  `dci`  |
+|        64bit integer          | `dci64` |
+|     8bit unsigned integer     | `dcu8`  |
+|    16bit unsigned integer     | `dcu16` |
+|    32bit unsigned integer     | `dcu32` |
+|    32bit unsigned integer     |  `dcu`  |
+|    64bit unsigned integer     | `dcu64` |
+|     32bit floating point      | `dcf32` |
+|     32bit floating point      |  `dcf`  |
+|     64bit floating point      | `dcf64` |
+|     64bit floating point      |  `dcd`  |
+|         ASCII string          | `dcsa`  |
+|        Unicode string         | `dcsu`  |
+|             Bit               |  `dcb`  |
 
 ## Load values from variable
 
@@ -62,6 +72,11 @@ All variables in Persephone are signed. ASCII and Unicode strings can be loaded 
 |    32bit integer     | `ldi32v` |
 |    32bit integer     |  `ldiv`  |
 |    64bit integer     | `ldi64v` |
+|     8bit unsigned integer     | `ldu8v`  |
+|    16bit unsigned integer     | `ldu16v` |
+|    32bit unsigned integer     | `ldu32v` |
+|    32bit unsigned integer     |  `lduv`  |
+|    64bit unsigned integer     | `ldu64v` |
 | 32bit floating point | `ldf32v` |
 | 32bit floating point |  `ldfv`  |
 | 64bit floating point | `ldf64v` |
@@ -99,6 +114,11 @@ One can load the pointer of any function, label or variable. In Persephone, labe
 |    32bit integer     | `ldi32c` |
 |    32bit integer     |  `ldic`  |
 |    64bit integer     | `ldi64c` |
+|     8bit unsigned integer     | `ldu8c`  |
+|    16bit unsigned integer     | `ldu16c` |
+|    32bit unsigned integer     | `ldu32c` |
+|    32bit unsigned integer     |  `lduc`  |
+|    64bit unsigned integer     | `ldu64c` |
 | 32bit floating point | `ldf32c` |
 | 32bit floating point |  `ldfc`  |
 | 64bit floating point | `ldf64c` |
@@ -232,6 +252,7 @@ A command is always an unsigned 16 bit integer. Commands with parameters are fol
 
 |       Type       |   Opcode   |
 | :------------------: | :---------: |
+|  `uint`   |     0x0     |
 |  `int`   |     0x1     |
 |  `float`  |    0x2     |
 |  `ASCII string`  |    0x3     |
@@ -241,7 +262,7 @@ A command is always an unsigned 16 bit integer. Commands with parameters are fol
 | Labelname | 0xE|
 |  Variable  |    0xF     |
 
-`int` is followed by the size of the integer. This can either be 0x8 (int8), 0x10 (int16), 0x20 (int32) or 0x40 (int64). The actual value comes after the size. Leading zeroes are required if the value doesn't fill all bits.
+`int` and `uint` is followed by the size of the integer. This can either be 0x8 (u/int8), 0x10 (u/int16), 0x20 (u/int32) or 0x40 (u/int64). The actual value comes after the size. Leading zeroes are required if the value doesn't fill all bits.
 
 `float` is also followed by a size. This can be 0x21 (float32) or 0x41 (float64). The actual value comes after the size. Leading zeroes are required if the value doesn't fill all bits.
 
@@ -266,9 +287,13 @@ By default, Persephone should infer the int size from the value.
 |   Range   |   Bits   |
 | :---------: | :---------: |
 |-128 to 127  |int8|
+| 0 to 255  |uint8|
 |-32768 to 32767     |int16|
+| 0 to 65535     |uint16|
 |-2147483648 to 2147483647    |int32|
+| 0 to 4294967295    |uint32|
 |-9223372036854775808 to 9223372036854775807      |int64|
+| 0 to 18446744073709551615      |uint64|
 
 ### Syscalls
 
@@ -288,11 +313,16 @@ Load parameter onto stack, call `syscall` with opcode or ptr as parameter.
 | :---------: | :---------: |
 |`nop`        |0x1000|
 |`store`      |0x0000|
-|`v_int8`     |0x0118|
+|`v_int8`     |0x0108|
 |`v_int16`    |0x0110|
 |`v_int32`    |0x0120|
 |`v_int`      |0x0120|
 |`v_int64`    |0x0140|
+|`v_uint8`    |0x1108|
+|`v_uint16`   |0x1110|
+|`v_uint32`   |0x1120|
+|`v_uint`     |0x1120|
+|`v_uint64`   |0x1140|
 |`v_float32`  |0x0121|
 |`v_float`    |0x0121|
 |`v_float64`  |0x0141|
@@ -307,6 +337,11 @@ Load parameter onto stack, call `syscall` with opcode or ptr as parameter.
 |`dci32`      |0x0220|
 |`dci`        |0x0220|
 |`dci64`      |0x0240|
+|`dcu8`       |0x1218|
+|`dcu16`      |0x1210|
+|`dcu32`      |0x1220|
+|`dcu`        |0x1220|
+|`dcu64`      |0x1240|
 |`dcf32`      |0x0221|
 |`dcf`        |0x0221|
 |`dcf64`      |0x0241|
@@ -319,6 +354,11 @@ Load parameter onto stack, call `syscall` with opcode or ptr as parameter.
 |`ldi32v`     |0x0320|
 |`ldiv`       |0x0320|
 |`ldi64v`     |0x0340|
+|`ldu8v`      |0x1318|
+|`ldu16v`     |0x1310|
+|`ldu32v`     |0x1320|
+|`lduv`       |0x1320|
+|`ldu64v`     |0x1340|
 |`ldf32v`     |0x0321|
 |`ldfv`       |0x0321|
 |`ldf64v`     |0x0341|
@@ -332,6 +372,11 @@ Load parameter onto stack, call `syscall` with opcode or ptr as parameter.
 |`ldi32c`     |0x0420|
 |`ldic`       |0x0420|
 |`ldi64c`     |0x0440|
+|`ldu8c`      |0x1418|
+|`ldu16c`     |0x1410|
+|`ldu32c`     |0x1420|
+|`lduc`       |0x1420|
+|`ldu64c`     |0x1440|
 |`ldf32c`     |0x0421|
 |`ldfc`       |0x0421|
 |`ldf64c`     |0x0441|
