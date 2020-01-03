@@ -115,6 +115,10 @@ One can load the pointer of any function, label or variable. In Persephone, labe
 
 `ret` returns from a function and jumps to the address of where the function was called +1.
 
+## Noop
+
+`nop` does nothing.
+
 ## Compiler directives
 
 ### Include
