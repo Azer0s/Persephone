@@ -115,6 +115,10 @@ One can load the pointer of any function, label or variable. In Persephone, labe
 
 `ret` returns from a function and jumps to the address of where the function was called +1.
 
+## Noop
+
+`nop` does nothing.
+
 ## Compiler directives
 
 ### Include
@@ -282,6 +286,7 @@ Load parameter onto stack, call `syscall` with opcode or ptr as parameter.
 
 |   Command   |   Opcode   |
 | :---------: | :---------: |
+|`nop`        |0x1000|
 |`store`      |0x0000|
 |`v_int8`     |0x0118|
 |`v_int16`    |0x0110|
