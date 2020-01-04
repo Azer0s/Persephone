@@ -246,6 +246,7 @@ The result value will be unsigned only of both operands are unsigned.
 
 |       Operation       | Command  |
 | :------------------: | :------: |
+|  Equality operator | `eq` |
 |     And two bits     | `and`  |
 | Or two bits | `or` |
 | Xor two bits | `xor` |
@@ -437,6 +438,7 @@ Load parameter onto stack, call `syscall` with opcode or ptr as parameter.
 |`cbase`      |0xFFFF|
 |`pop`        |0x0001|
 |`ret`        |0x0002|
+|`eq`         |0x0030|
 |`add`        |0x0003|
 |`sub`        |0x0004|
 |`mul`        |0x0005|
