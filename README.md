@@ -4,12 +4,13 @@
 
 `v_<datatype> variable_name` 
 
-ASCII and Unicode strings can be loaded as 8 bit uints and vice versa.
+ASCII and Unicode strings can be loaded as 8 bit uints and vice versa. Dynamic variables (declared with `v_dyn`) can be used to store any data.
 
 ### Commands:
 
 |       Datatype                |   Command   |
 | :---------------------------: | :---------: |
+|       Dynamic variable        |   `v_dyn`   | 
 |         8bit integer          |  `v_int8`   |
 |        16bit integer          |  `v_int16`  |
 |        32bit integer          |  `v_int32`  |
@@ -82,10 +83,13 @@ i64 -> all unsigned & signed int sizes & ptr
 
 `ld<datatype>v variable_name`
 
+To load a variable of unknown datatype, one can use `lddynv`.
+
 ### Commands:
 
 |       Datatype       | Command  |
 | :------------------: | :------: |
+|     Dynamic variable    | `lddynv`  |
 |     8bit integer     | `ldi8v`  |
 |    16bit integer     | `ldi16v` |
 |    32bit integer     | `ldi32v` |
@@ -185,6 +189,20 @@ jmp a # when jumping, the constant offset gets set according to the region
 ## Len
 
 For strings, `len` puts the number of characters of the string on the stack. For all other values, their bit size is put on the stack. `len` puts an 32 bit unsigned int on the stack.
+
+## Type
+
+`type` puts the datatype of a variable as u8 on the stack.
+
+|            Datatype             | Code  |
+| :------------------: | :------: |
+|  `uint`   |     0x0     |
+|  `int`   |     0x1     |
+|  `float`  |    0x2     |
+|  `ASCII string`  |    0x3     |
+|  `Unicode string`  |    0x4     |
+|  `Bit`  |    0x5     |
+|  `Ptr`  |    0x6     |
 
 ## Compiler directives
 
@@ -365,8 +383,10 @@ Load parameter onto stack, call `syscall` with opcode or ptr as parameter.
 
 |   Command   |   Opcode   |
 | :---------: | :---------: |
+|`type`       |0xEEEE|
 |`nop`        |0x1000|
 |`store`      |0x0000|
+|`v_dyn`      |0x0101|
 |`v_int8`     |0x0108|
 |`v_int16`    |0x0110|
 |`v_int32`    |0x0120|
@@ -403,6 +423,7 @@ Load parameter onto stack, call `syscall` with opcode or ptr as parameter.
 |`dcsa`       |0x0231|
 |`dcsu`       |0x0232|
 |`dcb`        |0x0200|
+|`lddynv`     |0x0301|
 |`ldi8v`      |0x0318|
 |`ldi16v`     |0x0310|
 |`ldi32v`     |0x0320|
