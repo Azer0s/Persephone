@@ -29,6 +29,25 @@ ASCII and Unicode strings can be loaded as 8 bit uints and vice versa.
 |            Bit                |   `v_bit`   |
 |          Pointer              |   `v_ptr`   |
 
+When storing data, loading constants or variables, implicit conversion is possible.
+
+```
+u8 -> ASCII string
+ASCII string -> u8
+
+u8 -> all unsigned & signed int sizes & ptr
+u16 -> all unsigned & signed int sizes & ptr
+u32 -> all unsigned & signed int sizes & ptr
+u64 -> all unsigned & signed int sizes & ptr
+
+ptr (u32) -> all unsigned & signed int sizes & ptr
+
+i8 -> all unsigned & signed int sizes & ptr
+i16 -> all unsigned & signed int sizes & ptr
+i32 -> all unsigned & signed int sizes & ptr
+i64 -> all unsigned & signed int sizes & ptr
+```
+
 ## Variable destruction
 
 `delete variable_name`
@@ -139,6 +158,30 @@ One can load the pointer of any function, label or variable. In Persephone, labe
 
 `nop` does nothing.
 
+## Constant pointer base
+
+`cbase` sets the offset for the pointer to the constant map for a specific code region.
+
+```coffeescript
+a:
+
+#        <---+
+dcsa "Foo" # |
+dcsa "Bar" # | Constant offset is 0, `ldsac 0` would put "Foo" on the stack
+dcsa "Baz" # |
+#        <---+
+   
+cbase
+
+#        <---+
+dcsa "abc" # |
+dcsa "def" # | Constant offset is 3, `ldsac 0` would put "a" on the stack
+dcsa "ghi" # |
+#        <---+
+
+jmp a # when jumping, the constant offset gets set according to the region
+```
+
 ## Compiler directives
 
 ### Include
@@ -189,6 +232,13 @@ The lower stack value is the left hand side, the upper is the right hand side of
 | Less or equal (float) | `lef` |
 | Greater than (float) | `gtf` |
 | Less than (float) | `ltf` |
+
+The size of the result value is determined by the size of the operands.
+The result value will have the smallest size possible.
+
+E.g.: Left value is i8, right value is i16 => result value will be i16
+
+The result value will be unsigned only of both operands are unsigned.
 
 ### Logical operators
 
