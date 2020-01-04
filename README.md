@@ -8,27 +8,27 @@ ASCII and Unicode strings can be loaded as 8 bit uints and vice versa. Dynamic v
 
 ### Commands:
 
-|       Datatype                |   Command   |
-| :---------------------------: | :---------: |
-|       Dynamic variable        |   `v_dyn`   | 
-|         8bit integer          |  `v_int8`   |
-|        16bit integer          |  `v_int16`  |
-|        32bit integer          |  `v_int32`  |
-|        32bit integer          |   `v_int`   |
-|        64bit integer          |  `v_int64`  |
-|     8bit unsigned integer     |  `v_uint8`  |
-|    16bit unsigned integer     |  `v_uint16` |
-|    32bit unsigned integer     |  `v_uint32` |
-|    32bit unsigned integer     |   `v_uint`  |
-|    64bit unsigned integer     |  `v_uint64` |
-|    32bit floating point       | `v_float32` |
-|    32bit floating point       |  `v_float`  |
-|    64bit floating point       | `v_float64` |
-|    64bit floating point       | `v_double`  |
-|        ASCII string           | `v_stringa` |
-|       Unicode string          | `v_stringu` |
-|            Bit                |   `v_bit`   |
-|          Pointer              |   `v_ptr`   |
+|        Datatype        |   Command   |
+| :--------------------: | :---------: |
+|    Dynamic variable    |   `v_dyn`   |
+|      8bit integer      |  `v_int8`   |
+|     16bit integer      |  `v_int16`  |
+|     32bit integer      |  `v_int32`  |
+|     32bit integer      |   `v_int`   |
+|     64bit integer      |  `v_int64`  |
+| 8bit unsigned integer  |  `v_uint8`  |
+| 16bit unsigned integer | `v_uint16`  |
+| 32bit unsigned integer | `v_uint32`  |
+| 32bit unsigned integer |  `v_uint`   |
+| 64bit unsigned integer | `v_uint64`  |
+|  32bit floating point  | `v_float32` |
+|  32bit floating point  |  `v_float`  |
+|  64bit floating point  | `v_float64` |
+|  64bit floating point  | `v_double`  |
+|      ASCII string      | `v_stringa` |
+|     Unicode string     | `v_stringu` |
+|          Bit           |   `v_bit`   |
+|        Pointer         |   `v_ptr`   |
 
 When storing data, loading constants or variables, implicit conversion is possible.
 
@@ -59,25 +59,25 @@ i64 -> all unsigned & signed int sizes & ptr
 
 ### Commands:
 
-|            Datatype           | Command |
-| :---------------------------: | :-----: |
-|         8bit integer          | `dci8`  |
-|        16bit integer          | `dci16` |
-|        32bit integer          | `dci32` |
-|        32bit integer          |  `dci`  |
-|        64bit integer          | `dci64` |
-|     8bit unsigned integer     | `dcu8`  |
-|    16bit unsigned integer     | `dcu16` |
-|    32bit unsigned integer     | `dcu32` |
-|    32bit unsigned integer     |  `dcu`  |
-|    64bit unsigned integer     | `dcu64` |
-|     32bit floating point      | `dcf32` |
-|     32bit floating point      |  `dcf`  |
-|     64bit floating point      | `dcf64` |
-|     64bit floating point      |  `dcd`  |
-|         ASCII string          | `dcsa`  |
-|        Unicode string         | `dcsu`  |
-|             Bit               |  `dcb`  |
+|        Datatype        | Command |
+| :--------------------: | :-----: |
+|      8bit integer      | `dci8`  |
+|     16bit integer      | `dci16` |
+|     32bit integer      | `dci32` |
+|     32bit integer      |  `dci`  |
+|     64bit integer      | `dci64` |
+| 8bit unsigned integer  | `dcu8`  |
+| 16bit unsigned integer | `dcu16` |
+| 32bit unsigned integer | `dcu32` |
+| 32bit unsigned integer |  `dcu`  |
+| 64bit unsigned integer | `dcu64` |
+|  32bit floating point  | `dcf32` |
+|  32bit floating point  |  `dcf`  |
+|  64bit floating point  | `dcf64` |
+|  64bit floating point  |  `dcd`  |
+|      ASCII string      | `dcsa`  |
+|     Unicode string     | `dcsu`  |
+|          Bit           |  `dcb`  |
 
 ## Load values from variable
 
@@ -87,27 +87,27 @@ To load a variable of unknown datatype, one can use `lddynv`.
 
 ### Commands:
 
-|       Datatype       | Command  |
-| :------------------: | :------: |
-|     Dynamic variable    | `lddynv`  |
-|     8bit integer     | `ldi8v`  |
-|    16bit integer     | `ldi16v` |
-|    32bit integer     | `ldi32v` |
-|    32bit integer     |  `ldiv`  |
-|    64bit integer     | `ldi64v` |
-|     8bit unsigned integer     | `ldu8v`  |
-|    16bit unsigned integer     | `ldu16v` |
-|    32bit unsigned integer     | `ldu32v` |
-|    32bit unsigned integer     |  `lduv`  |
-|    64bit unsigned integer     | `ldu64v` |
-| 32bit floating point | `ldf32v` |
-| 32bit floating point |  `ldfv`  |
-| 64bit floating point | `ldf64v` |
-| 64bit floating point |  `lddv`  |
-|     ASCII string     | `ldsav`  |
-|    Unicode string    | `ldsuv`  |
-|         Bit          |  `ldbv`  |
-|         Ptr          | `ldptrv` |
+|        Datatype        | Command  |
+| :--------------------: | :------: |
+|    Dynamic variable    | `lddynv` |
+|      8bit integer      | `ldi8v`  |
+|     16bit integer      | `ldi16v` |
+|     32bit integer      | `ldi32v` |
+|     32bit integer      |  `ldiv`  |
+|     64bit integer      | `ldi64v` |
+| 8bit unsigned integer  | `ldu8v`  |
+| 16bit unsigned integer | `ldu16v` |
+| 32bit unsigned integer | `ldu32v` |
+| 32bit unsigned integer |  `lduv`  |
+| 64bit unsigned integer | `ldu64v` |
+|  32bit floating point  | `ldf32v` |
+|  32bit floating point  |  `ldfv`  |
+|  64bit floating point  | `ldf64v` |
+|  64bit floating point  |  `lddv`  |
+|      ASCII string      | `ldsav`  |
+|     Unicode string     | `ldsuv`  |
+|          Bit           |  `ldbv`  |
+|          Ptr           | `ldptrv` |
 
 ## Load pointer
 
@@ -130,25 +130,25 @@ One can load the pointer of any function, label or variable. In Persephone, labe
 
 ### Commands:
 
-|       Datatype       | Command  |
-| :------------------: | :------: |
-|     8bit integer     | `ldi8c`  |
-|    16bit integer     | `ldi16c` |
-|    32bit integer     | `ldi32c` |
-|    32bit integer     |  `ldic`  |
-|    64bit integer     | `ldi64c` |
-|     8bit unsigned integer     | `ldu8c`  |
-|    16bit unsigned integer     | `ldu16c` |
-|    32bit unsigned integer     | `ldu32c` |
-|    32bit unsigned integer     |  `lduc`  |
-|    64bit unsigned integer     | `ldu64c` |
-| 32bit floating point | `ldf32c` |
-| 32bit floating point |  `ldfc`  |
-| 64bit floating point | `ldf64c` |
-| 64bit floating point |  `lddc`  |
-|     ASCII string     | `ldsac`  |
-|    Unicode string    | `ldsuc`  |
-|         Bit          |  `ldbc`  |
+|        Datatype        | Command  |
+| :--------------------: | :------: |
+|      8bit integer      | `ldi8c`  |
+|     16bit integer      | `ldi16c` |
+|     32bit integer      | `ldi32c` |
+|     32bit integer      |  `ldic`  |
+|     64bit integer      | `ldi64c` |
+| 8bit unsigned integer  | `ldu8c`  |
+| 16bit unsigned integer | `ldu16c` |
+| 32bit unsigned integer | `ldu32c` |
+| 32bit unsigned integer |  `lduc`  |
+| 64bit unsigned integer | `ldu64c` |
+|  32bit floating point  | `ldf32c` |
+|  32bit floating point  |  `ldfc`  |
+|  64bit floating point  | `ldf64c` |
+|  64bit floating point  |  `lddc`  |
+|      ASCII string      | `ldsac`  |
+|     Unicode string     | `ldsuc`  |
+|          Bit           |  `ldbc`  |
 
 ## Pop value from stack
 
@@ -194,15 +194,15 @@ For strings, `len` puts the number of characters of the string on the stack. For
 
 `type` puts the datatype of a variable as u8 on the stack.
 
-|            Datatype             | Code  |
-| :------------------: | :------: |
-|  `uint`   |     0x0     |
-|  `int`   |     0x1     |
-|  `float`  |    0x2     |
-|  `ASCII string`  |    0x3     |
-|  `Unicode string`  |    0x4     |
-|  `Bit`  |    0x5     |
-|  `Ptr`  |    0x6     |
+|     Datatype     | Code |
+| :--------------: | :--: |
+|      `uint`      | 0x0  |
+|      `int`       | 0x1  |
+|     `float`      | 0x2  |
+|  `ASCII string`  | 0x3  |
+| `Unicode string` | 0x4  |
+|      `Bit`       | 0x5  |
+|      `Ptr`       | 0x6  |
 
 ## Compiler directives
 
@@ -227,33 +227,33 @@ The lower stack value is the left hand side, the upper is the right hand side of
 
 #### Commands:
 
-|            Operation             | Command  |
-| :------------------: | :------: |
-|     Add two integers     | `add`  |
-|    Subtract two integers     | `sub` |
-|    Multiply two integers     | `mul` |
-|    Divide two integers     |  `div`  |
-|    Modulo operation on two integers     | `mod` |
-| Greater or equal | `ge` |
-| Less or equal | `le` |
-| Greater than | `gt` |
-| Less than | `lt` |
-|     And two ints     | `andi`  |
-| Or two ints | `ori` |
-| Xor two ints | `xori` |
-| Flip int bits |  `noti`  |
-|    Left shift     |  `shl`  |
-|    Right shift     | `shr` |
-| Increment by one | `inc` |
-| Decrement by one | `dec` |
-|     Add two floats     | `addf`  |
-|    Subtract two floats     | `subf` |
-|    Multiply two floats     | `mulf` |
-|    Divide two floats     |  `divf`  |
-| Greater or equal (float) | `gef` |
-| Less or equal (float) | `lef` |
-| Greater than (float) | `gtf` |
-| Less than (float) | `ltf` |
+|            Operation             | Command |
+| :------------------------------: | :-----: |
+|         Add two integers         |  `add`  |
+|      Subtract two integers       |  `sub`  |
+|      Multiply two integers       |  `mul`  |
+|       Divide two integers        |  `div`  |
+| Modulo operation on two integers |  `mod`  |
+|         Greater or equal         |  `ge`   |
+|          Less or equal           |  `le`   |
+|           Greater than           |  `gt`   |
+|            Less than             |  `lt`   |
+|           And two ints           | `andi`  |
+|           Or two ints            |  `ori`  |
+|           Xor two ints           | `xori`  |
+|          Flip int bits           | `noti`  |
+|            Left shift            |  `shl`  |
+|           Right shift            |  `shr`  |
+|         Increment by one         |  `inc`  |
+|         Decrement by one         |  `dec`  |
+|          Add two floats          | `addf`  |
+|       Subtract two floats        | `subf`  |
+|       Multiply two floats        | `mulf`  |
+|        Divide two floats         | `divf`  |
+|     Greater or equal (float)     |  `gef`  |
+|      Less or equal (float)       |  `lef`  |
+|       Greater than (float)       |  `gtf`  |
+|        Less than (float)         |  `ltf`  |
 
 The size of the result value is determined by the size of the operands.
 The result value will have the smallest size possible.
@@ -266,23 +266,23 @@ The result value will be unsigned only of both operands are unsigned.
 
 #### Commands:
 
-|       Operation       | Command  |
-| :------------------: | :------: |
-|  Equality operator | `eq` |
-|     And two bits     | `and`  |
-| Or two bits | `or` |
-| Xor two bits | `xor` |
-| Flip a bit |  `not`  |
+|     Operation     | Command |
+| :---------------: | :-----: |
+| Equality operator |  `eq`   |
+|   And two bits    |  `and`  |
+|    Or two bits    |  `or`   |
+|   Xor two bits    |  `xor`  |
+|    Flip a bit     |  `not`  |
 
 ### String operations
 
 #### Commands:
 
-|                   Operation                    |     Command     |
-| :--------------------------------------------: | :-------------: |
-|            Concatenate two strings             |     `conc`      |
-| Get a character (stack: position) |     `getc <nameOfVar>`      |
-| Set a character (lower: position, upper: char) |     `setc <nameOfVar>`      |
+|                   Operation                    |      Command       |
+| :--------------------------------------------: | :----------------: |
+|            Concatenate two strings             |       `conc`       |
+|       Get a character (stack: position)        | `getc <nameOfVar>` |
+| Set a character (lower: position, upper: char) | `setc <nameOfVar>` |
 
 ## Jump to a label
 
@@ -322,17 +322,17 @@ A command is always an unsigned 16 bit integer. Commands with parameters are fol
 
 ### Parameters
 
-|       Type       |   Opcode   |
-| :------------------: | :---------: |
-|  `uint`   |     0x0     |
-|  `int`   |     0x1     |
-|  `float`  |    0x2     |
-|  `ASCII string`  |    0x3     |
-|  `Unicode string`  |    0x4     |
-|  `Bit`  |    0x5     |
-|  `Ptr`  |    0x6     |
-| Labelname | 0xE|
-|  Variable  |    0xF     |
+|       Type       | Opcode |
+| :--------------: | :----: |
+|      `uint`      |  0x0   |
+|      `int`       |  0x1   |
+|     `float`      |  0x2   |
+|  `ASCII string`  |  0x3   |
+| `Unicode string` |  0x4   |
+|      `Bit`       |  0x5   |
+|      `Ptr`       |  0x6   |
+|    Labelname     |  0xE   |
+|     Variable     |  0xF   |
 
 `int` and `uint` is followed by the size of the integer. This can either be 0x8 (u/int8), 0x10 (u/int16), 0x20 (u/int32) or 0x40 (u/int64). The actual value comes after the size. Leading zeroes are required if the value doesn't fill all bits.
 
@@ -356,148 +356,148 @@ Commands that require a varname, are followed by 0xF and a 64 bit unsigned integ
 
 By default, Persephone should infer the int size from the value.
 
-|   Range   |   Bits   |
-| :---------: | :---------: |
-|-128 to 127  |int8|
-| 0 to 255  |uint8|
-|-32768 to 32767     |int16|
-| 0 to 65535     |uint16|
-|-2147483648 to 2147483647    |int32|
-| 0 to 4294967295    |uint32|
-|-9223372036854775808 to 9223372036854775807      |int64|
-| 0 to 18446744073709551615      |uint64|
+|                    Range                    |  Bits  |
+| :-----------------------------------------: | :----: |
+|                 -128 to 127                 |  int8  |
+|                  0 to 255                   | uint8  |
+|               -32768 to 32767               | int16  |
+|                 0 to 65535                  | uint16 |
+|          -2147483648 to 2147483647          | int32  |
+|               0 to 4294967295               | uint32 |
+| -9223372036854775808 to 9223372036854775807 | int64  |
+|          0 to 18446744073709551615          | uint64 |
 
 ### Syscalls
 
 Load parameter onto stack, call `syscall` with opcode or ptr as parameter.
 
-|   Command   |   Opcode   |
-| :---------: | :---------: |
-|Print      |0x01|
-|Println     |0x10|
-|Read char    |0x02|
-|Read line    |0x20|
+|  Command  | Opcode |
+| :-------: | :----: |
+|   Print   |  0x01  |
+|  Println  |  0x10  |
+| Read char |  0x02  |
+| Read line |  0x20  |
 
 
 ### Command opcodes 
 
-|   Command   |   Opcode   |
-| :---------: | :---------: |
-|`type`       |0xEEEE|
-|`nop`        |0x1000|
-|`store`      |0x0000|
-|`v_dyn`      |0x0101|
-|`v_int8`     |0x0108|
-|`v_int16`    |0x0110|
-|`v_int32`    |0x0120|
-|`v_int`      |0x0120|
-|`v_int64`    |0x0140|
-|`v_uint8`    |0x1108|
-|`v_uint16`   |0x1110|
-|`v_uint32`   |0x1120|
-|`v_uint`     |0x1120|
-|`v_uint64`   |0x1140|
-|`v_float32`  |0x0121|
-|`v_float`    |0x0121|
-|`v_float64`  |0x0141|
-|`v_double`   |0x0141|
-|`v_stringa`  |0x0131|
-|`v_stringu`  |0x0132|
-|`v_ptr`      |0x0150|
-|`v_bit`      |0x0100|
-|`delete`     |0x0099|
-|`dci8`       |0x0218|
-|`dci16`      |0x0210|
-|`dci32`      |0x0220|
-|`dci`        |0x0220|
-|`dci64`      |0x0240|
-|`dcu8`       |0x1218|
-|`dcu16`      |0x1210|
-|`dcu32`      |0x1220|
-|`dcu`        |0x1220|
-|`dcu64`      |0x1240|
-|`dcf32`      |0x0221|
-|`dcf`        |0x0221|
-|`dcf64`      |0x0241|
-|`dcd`        |0x0241|
-|`dcsa`       |0x0231|
-|`dcsu`       |0x0232|
-|`dcb`        |0x0200|
-|`lddynv`     |0x0301|
-|`ldi8v`      |0x0318|
-|`ldi16v`     |0x0310|
-|`ldi32v`     |0x0320|
-|`ldiv`       |0x0320|
-|`ldi64v`     |0x0340|
-|`ldu8v`      |0x1318|
-|`ldu16v`     |0x1310|
-|`ldu32v`     |0x1320|
-|`lduv`       |0x1320|
-|`ldu64v`     |0x1340|
-|`ldf32v`     |0x0321|
-|`ldfv`       |0x0321|
-|`ldf64v`     |0x0341|
-|`lddv`       |0x0341|
-|`ldsav`      |0x0331|
-|`ldsuv`      |0x0332|
-|`ldptrv`     |0x0350|
-|`ldbv`       |0x0300|
-|`ldi8c`      |0x0418|
-|`ldi16c`     |0x0410|
-|`ldi32c`     |0x0420|
-|`ldic`       |0x0420|
-|`ldi64c`     |0x0440|
-|`ldu8c`      |0x1418|
-|`ldu16c`     |0x1410|
-|`ldu32c`     |0x1420|
-|`lduc`       |0x1420|
-|`ldu64c`     |0x1440|
-|`ldf32c`     |0x0421|
-|`ldfc`       |0x0421|
-|`ldf64c`     |0x0441|
-|`lddc`       |0x0441|
-|`ldsac`      |0x0431|
-|`ldsuc`      |0x0432|
-|`ldbc`       |0x0400|
-|`cbase`      |0xFFFF|
-|`pop`        |0x0001|
-|`ret`        |0x0002|
-|`eq`         |0x0030|
-|`add`        |0x0003|
-|`sub`        |0x0004|
-|`mul`        |0x0005|
-|`div`        |0x0006|
-|`mod`        |0x0007|
-|`ge`         |0x0008|
-|`le`         |0x0009|
-|`gt`         |0x000A|
-|`lt`         |0x000B|
-|`andi`       |0x000C|
-|`ori`        |0x000D|
-|`xori`       |0x000E|
-|`noti`       |0x000F|
-|`shl`        |0x0010|
-|`shr`        |0x0011|
-|`inc`        |0x0012|
-|`dec`        |0x0013|
-|`addf`       |0x0014|
-|`subf`       |0x0015|
-|`mulf`       |0x0016|
-|`divf`       |0x0017|
-|`gef`        |0x0018|
-|`lef`        |0x0019|
-|`gtf`        |0x001A|
-|`ltf`        |0x001B|
-|`and`        |0x001C|
-|`or`         |0x001D|
-|`xor`        |0x001E|
-|`not`        |0x001F|
-|`conc`       |0x0020|
-|`len`        |0x0021|
-|`getc`       |0x0022|
-|`setc`       |0x0023|
-|`syscall`    |0x0024|
-|`extern`     |0x0025|
+|   Command   | Opcode |
+| :---------: | :----: |
+|   `type`    | 0xEEEE |
+|    `nop`    | 0x1000 |
+|   `store`   | 0x0000 |
+|   `v_dyn`   | 0x0101 |
+|  `v_int8`   | 0x0108 |
+|  `v_int16`  | 0x0110 |
+|  `v_int32`  | 0x0120 |
+|   `v_int`   | 0x0120 |
+|  `v_int64`  | 0x0140 |
+|  `v_uint8`  | 0x1108 |
+| `v_uint16`  | 0x1110 |
+| `v_uint32`  | 0x1120 |
+|  `v_uint`   | 0x1120 |
+| `v_uint64`  | 0x1140 |
+| `v_float32` | 0x0121 |
+|  `v_float`  | 0x0121 |
+| `v_float64` | 0x0141 |
+| `v_double`  | 0x0141 |
+| `v_stringa` | 0x0131 |
+| `v_stringu` | 0x0132 |
+|   `v_ptr`   | 0x0150 |
+|   `v_bit`   | 0x0100 |
+|  `delete`   | 0x0099 |
+|   `dci8`    | 0x0218 |
+|   `dci16`   | 0x0210 |
+|   `dci32`   | 0x0220 |
+|    `dci`    | 0x0220 |
+|   `dci64`   | 0x0240 |
+|   `dcu8`    | 0x1218 |
+|   `dcu16`   | 0x1210 |
+|   `dcu32`   | 0x1220 |
+|    `dcu`    | 0x1220 |
+|   `dcu64`   | 0x1240 |
+|   `dcf32`   | 0x0221 |
+|    `dcf`    | 0x0221 |
+|   `dcf64`   | 0x0241 |
+|    `dcd`    | 0x0241 |
+|   `dcsa`    | 0x0231 |
+|   `dcsu`    | 0x0232 |
+|    `dcb`    | 0x0200 |
+|  `lddynv`   | 0x0301 |
+|   `ldi8v`   | 0x0318 |
+|  `ldi16v`   | 0x0310 |
+|  `ldi32v`   | 0x0320 |
+|   `ldiv`    | 0x0320 |
+|  `ldi64v`   | 0x0340 |
+|   `ldu8v`   | 0x1318 |
+|  `ldu16v`   | 0x1310 |
+|  `ldu32v`   | 0x1320 |
+|   `lduv`    | 0x1320 |
+|  `ldu64v`   | 0x1340 |
+|  `ldf32v`   | 0x0321 |
+|   `ldfv`    | 0x0321 |
+|  `ldf64v`   | 0x0341 |
+|   `lddv`    | 0x0341 |
+|   `ldsav`   | 0x0331 |
+|   `ldsuv`   | 0x0332 |
+|  `ldptrv`   | 0x0350 |
+|   `ldbv`    | 0x0300 |
+|   `ldi8c`   | 0x0418 |
+|  `ldi16c`   | 0x0410 |
+|  `ldi32c`   | 0x0420 |
+|   `ldic`    | 0x0420 |
+|  `ldi64c`   | 0x0440 |
+|   `ldu8c`   | 0x1418 |
+|  `ldu16c`   | 0x1410 |
+|  `ldu32c`   | 0x1420 |
+|   `lduc`    | 0x1420 |
+|  `ldu64c`   | 0x1440 |
+|  `ldf32c`   | 0x0421 |
+|   `ldfc`    | 0x0421 |
+|  `ldf64c`   | 0x0441 |
+|   `lddc`    | 0x0441 |
+|   `ldsac`   | 0x0431 |
+|   `ldsuc`   | 0x0432 |
+|   `ldbc`    | 0x0400 |
+|   `cbase`   | 0xFFFF |
+|    `pop`    | 0x0001 |
+|    `ret`    | 0x0002 |
+|    `eq`     | 0x0030 |
+|    `add`    | 0x0003 |
+|    `sub`    | 0x0004 |
+|    `mul`    | 0x0005 |
+|    `div`    | 0x0006 |
+|    `mod`    | 0x0007 |
+|    `ge`     | 0x0008 |
+|    `le`     | 0x0009 |
+|    `gt`     | 0x000A |
+|    `lt`     | 0x000B |
+|   `andi`    | 0x000C |
+|    `ori`    | 0x000D |
+|   `xori`    | 0x000E |
+|   `noti`    | 0x000F |
+|    `shl`    | 0x0010 |
+|    `shr`    | 0x0011 |
+|    `inc`    | 0x0012 |
+|    `dec`    | 0x0013 |
+|   `addf`    | 0x0014 |
+|   `subf`    | 0x0015 |
+|   `mulf`    | 0x0016 |
+|   `divf`    | 0x0017 |
+|    `gef`    | 0x0018 |
+|    `lef`    | 0x0019 |
+|    `gtf`    | 0x001A |
+|    `ltf`    | 0x001B |
+|    `and`    | 0x001C |
+|    `or`     | 0x001D |
+|    `xor`    | 0x001E |
+|    `not`    | 0x001F |
+|   `conc`    | 0x0020 |
+|    `len`    | 0x0021 |
+|   `getc`    | 0x0022 |
+|   `setc`    | 0x0023 |
+|  `syscall`  | 0x0024 |
+|  `extern`   | 0x0025 |
 
 ### jmp/call
 
