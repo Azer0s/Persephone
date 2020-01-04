@@ -182,6 +182,10 @@ dcsa "ghi" # |
 jmp a # when jumping, the constant offset gets set according to the region
 ```
 
+## Len
+
+For strings, `len` puts the number of characters of the string on the stack. For all other values, their bit size is put on the stack. `len` puts an 32 bit unsigned int on the stack.
+
 ## Compiler directives
 
 ### Include
@@ -259,7 +263,6 @@ The result value will be unsigned only of both operands are unsigned.
 |                   Operation                    |     Command     |
 | :--------------------------------------------: | :-------------: |
 |            Concatenate two strings             |     `conc`      |
-|              Get length of string              | `len <nameOfVar>` |
 | Get a character (stack: position) |     `getc <nameOfVar>`      |
 | Set a character (lower: position, upper: char) |     `setc <nameOfVar>`      |
 
